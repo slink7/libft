@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:34:53 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/08 18:31:58 by scambier         ###   ########.fr       */
+/*   Created: 2023/11/11 16:36:00 by scambier          #+#    #+#             */
+/*   Updated: 2023/11/12 15:55:07 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	size_t	j;
-	size_t	dlen;
-	size_t	slen;
+	static char	*dict = "0123456789";
 
-	i = 0;
-	j = ft_strlen(dest);
-	dlen = j;
-	slen = ft_strlen(src);
-	if (size == 0 || size <= dlen)
-		return (slen + size);
-	while (src[i] && i < size - dlen - 1)
-		dest[j++] = src[i++];
-	dest[j] = '\0';
-	return (dlen + slen);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		ft_putnbr_fd(-n / 10, fd);
+		write(fd, dict + n % 10, 1);
+		return ;
+	}
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	write(fd, dict + n % 10, 1);
 }

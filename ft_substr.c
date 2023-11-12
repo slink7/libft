@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:34:53 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/08 18:31:58 by scambier         ###   ########.fr       */
+/*   Created: 2023/11/08 17:59:39 by scambier          #+#    #+#             */
+/*   Updated: 2023/11/11 18:53:40 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+static size_t	min(size_t a, size_t b)
 {
-	size_t	i;
-	size_t	j;
-	size_t	dlen;
-	size_t	slen;
+	return ((a <= b) * a + (a > b) * b);
+}
 
-	i = 0;
-	j = ft_strlen(dest);
-	dlen = j;
-	slen = ft_strlen(src);
-	if (size == 0 || size <= dlen)
-		return (slen + size);
-	while (src[i] && i < size - dlen - 1)
-		dest[j++] = src[i++];
-	dest[j] = '\0';
-	return (dlen + slen);
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	target_len;
+	char	*out;
+	size_t	k;
+
+	target_len = min(len, ft_strlen(s) - start);
+	out = malloc(sizeof(char) * target_len);
+	if (!out)
+		return (0);
+	k = 0;
+	while (k < len)
+		out[k] = s[start + k];
+	return (out);
 }

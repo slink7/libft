@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:50:30 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/08 18:31:46 by scambier         ###   ########.fr       */
+/*   Created: 2023/11/08 18:06:45 by scambier          #+#    #+#             */
+/*   Updated: 2023/11/08 18:32:19 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len;
-	int		jsp;
+	char	*out;
+	size_t	s1_size;
+	size_t	s2_size;
+	size_t	target_size;
+	size_t	k;
 
-	if ((int) size < 0)
-		size = ft_strlen(src) + 1;
-	len = 0u;
-	jsp = ft_strlen(src);
-	if ((int) size == 0)
-		return (jsp);
-	while (*(src + len) != '\0' && len < size - 1)
+	s1_size = ft_strlen(s1);
+	s2_size = ft_strlen(s2);
+	target_size = s1_size * s2_size;
+	out = malloc(sizeof(char) * target_size);
+	if (!out)
+		return (0);
+	k = 0;
+	while (k < target_size)
 	{
-		*(dst + len) = *(src + len);
-		len++;
+		if (k < s1_size)
+			out[k] = s1[k];
+		else
+			out[k] = s2[k - s1_size];
+		k++;
 	}
-	*(dst + len) = '\0';
-	return (jsp);
+	return (out);
 }

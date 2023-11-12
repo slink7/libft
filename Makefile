@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2023/11/08 17:07:38 by scambier         ###   ########.fr        #
+#    Updated: 2023/11/08 18:33:50 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,5 +42,5 @@ GET_SOURCES :
 	find $(SRC_PATH)/ -type f -name "*.c"
 
 TEST_MAIN : all
-	cc main.c -L$(OUT_PATH)/ -lft -lbsd
+	cc main.c -L$(OUT_PATH)/ -lft -lbsd -g3
 	./a.out
