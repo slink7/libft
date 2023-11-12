@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:16:49 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/08 18:32:47 by scambier         ###   ########.fr       */
+/*   Updated: 2023/11/12 20:39:19 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "libft.h"
 
-static int	is_elem_of(char c, char const *set)
+static int	elem_of(char c, char const *set)
 {
 	while (*set)
 		if (c == *set++)
@@ -22,33 +22,30 @@ static int	is_elem_of(char c, char const *set)
 	return (0);
 }
 
-static int	count_elem(char const *s1, char const *set)
+static int	count_elem(char const *s1, char const *set, int start, int dir)
 {
 	int	k;
 
 	k = 0;
-	while (*s1)
-		k += is_elem_of(*s1++, set);
+	while (elem_of(s1[start + k * dir], set))
+		k++;
 	return (k);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*out;
+	int		s1_len;
 	int		k;
+	int		trim_front;
+	int		trim_back;
+	char	*out;
 
-	out = malloc(sizeof(char) * (ft_strlen(s1) - count_elem(s1, set)));
-	if (!out)
-		return (0);
+	s1_len = ft_strlen(s1);
 	k = 0;
-	while (*s1)
-	{
-		if (is_elem_of(*s1, set))
-		{
-			s1++;
-			continue ;
-		}
-		out[k++] = *s1++;
-	}
+	trim_front = count_elem(s1, set, 0, 1);
+	trim_back = s1_len - count_elem(s1, set, s1_len - 1, -1);
+	out = malloc(trim_back);
+	while (trim_front < trim_back)
+		out[k++] = s1[trim_front++];
 	return (out);
 }
