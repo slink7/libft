@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+static int	tvnrf(char *c)
+{
+	return ((*c < 9 || *c > 13) && *c != 32);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	long	out;
@@ -19,9 +24,12 @@ int	ft_atoi(const char *nptr)
 
 	out = 0;
 	sign = 1;
-	if (*nptr == '-')
+	while (!tvnrf((char *)nptr))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		sign = -1;
+		if (*nptr == '-')
+			sign = -1;
 		nptr++;
 	}
 	while (*nptr)
