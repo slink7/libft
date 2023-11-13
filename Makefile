@@ -65,7 +65,7 @@ OBJ_PATH = ./obj
 OBJ = $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRC)))))
 OBJ_BONUS = $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRC_BONUS)))))
 
-CSFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 
 default : all
 
@@ -81,7 +81,7 @@ $(OUT_PATH) :
 	mkdir $(OUT_PATH)
 
 $(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
-	cc $(CSFLAGS) -o $@ -c $< $()
+	cc $(CFLAGS) -o $@ -c $< $()
 
 $(OUT_PATH)/$(OUT) : $(OUT_PATH) $(OBJ_PATH) $(OBJ)
 	ar rc $(OUT_PATH)/$(OUT) $(OBJ)
