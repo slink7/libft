@@ -15,11 +15,15 @@ char	*ft_strrchr(const char *str, int c)
 	char	*temp;
 
 	if (!*str)
+	{
+		if (!c)
+			return ((char *)str);
 		return (0);
+	}		
 	temp = ft_strrchr(str + 1, c);
 	if (temp)
 		return (temp);
-	if (*str == c)
+	if (*str == (unsigned char)c)
 		return ((char *)str);
 	return (0);
 }
