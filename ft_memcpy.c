@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	if (n <= 0)
 		return (dst);
+	if (!dst && !src)
+		return (0);
 	*((char *)dst + n - 1) = *((char *)src + n - 1);
 	return (ft_memcpy(dst, src, n - 1));
 }
