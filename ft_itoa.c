@@ -17,13 +17,13 @@ static int	get_word_length(long n)
 {
 	int	out;
 
-	out = 0;
+	out = 1;
 	if (n < 0)
 	{
 		out++;
 		n = -n;
 	}
-	while (n != 0)
+	while (n > 9)
 	{
 		out++;
 		n /= 10;
