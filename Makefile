@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2023/11/14 16:30:15 by scambier         ###   ########.fr        #
+#    Updated: 2023/11/14 16:34:26 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,7 @@ $(OUT_PATH)/$(OUT) : $(OUT_PATH) $(OBJ_PATH) $(OBJ)
 	ar rc $(OUT_PATH)/$(OUT) $(OBJ)
 
 clean :
-	rm -rf $(OBJ_PATH)
+	rm -rf $(OBJ) $(OBJ_BONUS)
 
 fclean : clean
 	rm $(OUT_PATH)/$(OUT)
