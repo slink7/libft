@@ -35,17 +35,11 @@ static int	count_elem(char const *s1, char const *set, int start, int dir)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		s1_len;
-	int		k;
-	int		trim_front;
-	int		trim_back;
-	char	*out;
+	int		start;
+	int		dst_len;
 
 	s1_len = ft_strlen(s1);
-	k = 0;
-	trim_front = count_elem(s1, set, 0, 1);
-	trim_back = s1_len - count_elem(s1, set, s1_len - 1, -1);
-	out = malloc(trim_back);
-	while (trim_front < trim_back)
-		out[k++] = s1[trim_front++];
-	return (out);
+	start = count_elem(s1, set, 0, 1);
+	dst_len = s1_len - count_elem(s1, set, s1_len - 1, -1) - start;
+	return (ft_substr(s1, start, dst_len));
 }
