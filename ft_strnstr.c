@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:36:17 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/08 17:51:59 by scambier         ###   ########.fr       */
+/*   Updated: 2023/11/14 13:50:31 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	little_len;
 
 	little_len = ft_strlen(little);
-	if (!little_len || !len)
+	if (!little_len)
 		return ((char *)big);
 	bk = 0;
 	while (big[bk] && (len - (size_t)bk >= little_len))
