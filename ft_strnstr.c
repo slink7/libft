@@ -17,10 +17,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	bk;
 	size_t	lk;
 	size_t	little_len;
-	size_t	big_len;
 
 	little_len = ft_strlen(little);
-	big_len = ft_strlen(big);
+	if (!little_len || !len)
+		return ((char *)big);
 	bk = 0;
 	while (big[bk] && (len - (size_t)bk >= little_len))
 	{
