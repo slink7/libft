@@ -14,8 +14,8 @@
 
 static int	ft_lstsize_rec(t_list *lst, int out)
 {
-	if (lst->next)
-		return (ft_lstsize_rec(lst, out + 1));
+	if (lst)
+		return (ft_lstsize_rec(lst->next, out + 1));
 	return (out);
 }
 
