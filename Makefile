@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2023/11/14 16:04:34 by scambier         ###   ########.fr        #
+#    Updated: 2023/11/14 16:30:15 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ SRC_BONUS = \
 	ft_lstiter_bonus.c\
 	ft_lstmap_bonus.c
 
-OBJ_PATH = ./obj
+OBJ_PATH = .
 OBJ = $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRC)))))
 OBJ_BONUS = $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRC_BONUS)))))
 
@@ -95,18 +95,3 @@ fclean : clean
 re : fclean all
 
 .PHONY : re fclean clean all default GET_SOURCES GET_SOURCES_BONUS TEST_MAIN FCLEAN
-
-#DEBUG TARGETS
-
-GET_SOURCES :
-	find $(SRC_PATH)/ -type f -name "ft_*.c"
-
-GET_SOURCES_BONUS :
-	find $(SRC_PATH)/ -type f -name "ft_*_bonus.c"
-
-TEST_MAIN : bonus
-	cc main.c -L$(OUT_PATH)/ -lft -lbsd -g3
-	./a.out
-
-FCLEAN : fclean
-	rm ./a.out
