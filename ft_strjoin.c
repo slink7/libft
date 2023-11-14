@@ -24,8 +24,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	s1_size = ft_strlen(s1);
 	s2_size = ft_strlen(s2);
-	target_size = s1_size * s2_size;
-	out = malloc(sizeof(char) * target_size);
+	target_size = s1_size + s2_size;
+	out = malloc(sizeof(char) * (target_size + 1));
 	if (!out)
 		return (0);
 	k = 0;
@@ -37,5 +37,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 			out[k] = s2[k - s1_size];
 		k++;
 	}
+	out[target_size] = 0;
 	return (out);
 }
