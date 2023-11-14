@@ -6,13 +6,13 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:23:31 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/08 17:35:31 by scambier         ###   ########.fr       */
+/*   Updated: 2023/11/14 15:53:35 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	tvnrf(char *c)
+int	tvnrf(char *c)
 {
 	return ((*c < 9 || *c > 13) && *c != 32);
 }

@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2023/11/14 15:20:34 by scambier         ###   ########.fr        #
+#    Updated: 2023/11/14 16:04:34 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,9 +94,7 @@ fclean : clean
 
 re : fclean all
 
-
-.phony = re fclean clean all default
-
+.PHONY : re fclean clean all default GET_SOURCES GET_SOURCES_BONUS TEST_MAIN FCLEAN
 
 #DEBUG TARGETS
 
@@ -109,3 +107,6 @@ GET_SOURCES_BONUS :
 TEST_MAIN : bonus
 	cc main.c -L$(OUT_PATH)/ -lft -lbsd -g3
 	./a.out
+
+FCLEAN : fclean
+	rm ./a.out
