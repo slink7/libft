@@ -16,6 +16,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	char	buffer[8192];
 
+	if (!dst && !src)
+		return (0);
 	ft_memcpy(buffer, (char *)src, n);
 	ft_memcpy((char *)dst, buffer, n);
 	return (dst);
