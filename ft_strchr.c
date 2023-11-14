@@ -12,7 +12,7 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	if (*str == c)
+	if (*str == (unsigned char)c)
 		return ((char *)str);
 	if (!*str)
 		return (0);
