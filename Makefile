@@ -61,7 +61,7 @@ SRC_BONUS = \
 	ft_lstiter_bonus.c\
 	ft_lstmap_bonus.c
 
-OBJ_PATH = .
+OBJ_PATH = obj/
 OBJ = $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRC)))))
 OBJ_BONUS = $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRC_BONUS)))))
 
@@ -87,11 +87,25 @@ $(OUT_PATH)/$(OUT) : $(OUT_PATH) $(OBJ_PATH) $(OBJ)
 	ar rc $(OUT_PATH)/$(OUT) $(OBJ)
 
 clean :
-	rm -rf $(OBJ) $(OBJ_BONUS)
+	rm -rf $(OBJ_PATH) || true
 
 fclean : clean
-	rm $(OUT_PATH)/$(OUT)
+	rm $(OUT_PATH)/$(OUT) || true
 
 re : fclean all
 
 .PHONY : re fclean clean all default GET_SOURCES GET_SOURCES_BONUS TEST_MAIN FCLEAN
+
+test_clean : fclean
+	rm ./a.out || true
+
+so :
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRC_BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJ_BONUS)
+
+unit :
+	cd ../libft-unit-test ; make f
+
+trip :
+	rm libft.so || true
+	cd tripouille ; make a
