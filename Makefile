@@ -98,6 +98,7 @@ re : fclean all
 
 test_clean : fclean
 	rm ./a.out || true
+	rm libft.so || true
 
 so :
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRC_BONUS)
