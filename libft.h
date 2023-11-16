@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:27:27 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/14 15:22:37 by scambier         ###   ########.fr       */
+/*   Updated: 2023/11/15 22:09:22 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-char	ft_tolower(int c);
-char	ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 char	*ft_strchr(const char *str, int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
