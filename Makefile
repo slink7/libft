@@ -6,15 +6,12 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2023/11/14 16:34:26 by scambier         ###   ########.fr        #
+#    Updated: 2023/11/16 01:00:00 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = libft.a
 
-OUT_PATH = .
-OUT = libft.a
-
-SRC_PATH = .
 SRC = \
 	ft_isalpha.c\
 	ft_isdigit.c\
@@ -61,52 +58,52 @@ SRC_BONUS = \
 	ft_lstiter_bonus.c\
 	ft_lstmap_bonus.c
 
-OBJ_PATH = obj/
-OBJ = $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRC)))))
-OBJ_BONUS = $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRC_BONUS)))))
+OBJ = $(addsuffix .o, $(notdir $(basename $(SRC))))
+OBJ_BONUS = $(addsuffix .o, $(notdir $(basename $(SRC_BONUS))))
 
 CFLAGS = -Wall -Werror -Wextra
 
 default : all
 
-all : $(OUT_PATH)/$(OUT)
+all : $(NAME)
 
-bonus : $(OUT_PATH) $(OBJ_PATH) $(OBJ) $(OBJ_BONUS)
-	ar rc $(OUT_PATH)/$(OUT) $(OBJ) $(OBJ_BONUS)
+bonus : $(OBJ) $(OBJ_BONUS)
+	ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
 
-$(OBJ_PATH) :
-	mkdir $(OBJ_PATH)
-
-$(OUT_PATH) :
-	mkdir $(OUT_PATH)
-
-$(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
+%.o : %.c
 	cc $(CFLAGS) -o $@ -c $< $()
 
-$(OUT_PATH)/$(OUT) : $(OUT_PATH) $(OBJ_PATH) $(OBJ)
-	ar rc $(OUT_PATH)/$(OUT) $(OBJ)
+$(NAME) : $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 clean :
-	rm -rf $(OBJ_PATH) || true
+	rm -rf $(OBJ) $(OBJ_BONUS) || true
 
 fclean : clean
-	rm $(OUT_PATH)/$(OUT) || true
+	rm $(NAME) || true
 
 re : fclean all
 
-.PHONY : re fclean clean all default GET_SOURCES GET_SOURCES_BONUS TEST_MAIN FCLEAN
 
-test_clean : fclean
-	rm ./a.out || true
-	rm libft.so || true
+.PHONY : re fclean clean all default
 
-so :
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRC_BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJ_BONUS)
+# test :
+# 	cc *.c -lbsd -g3
+# 	./a.out
 
-unit :
-	cd ../libft-unit-test ; make f
+# test_clean : fclean
+# 	rm ./a.out || true
+# 	rm libft.so || true
 
-trip :
-	rm libft.so || true
-	cd tripouille ; make a
+# so :
+# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRC_BONUS)
+# 	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJ_BONUS)
+
+# unit :
+# 	cd ../libft-unit-test ; make f
+
+# trip :
+# 	rm libft.so || true
+# 	cd tripouille ; make a
+
+# .PHONY : test_clean so unit trip
