@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:34:53 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/14 13:46:37 by scambier         ###   ########.fr       */
+/*   Updated: 2023/11/16 00:25:11 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	slen;
 
 	if ((!dest || !src) && !size)
-			return (0);
+		return (0);
 	i = 0;
 	j = ft_strlen(dest);
 	dlen = j;
