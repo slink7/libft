@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 17:26:04 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/14 15:22:43 by scambier         ###   ########.fr       */
+/*   Updated: 2023/11/16 00:50:17 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,21 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*out;
+	void	*new_content;
 
-	out = ft_lstnew(f(lst->content));
-	if (!out)
+	if (!lst)
 		return (0);
+	new_content = f(lst->content);
+	if (!new_content)
+		return (0);
+	out = ft_lstnew(new_content);
+	if (!out)
+	{
+		del(new_content);
+		return (0);
+	}
 	if (!lst->next)
 		return (out);
 	out->next = ft_lstmap(lst->next, f, del);
-	if (out->next == 0)
-		ft_lstdelone(out, del);
 	return (out);
 }
