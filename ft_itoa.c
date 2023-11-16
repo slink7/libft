@@ -6,11 +6,10 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:18:13 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/12 15:59:13 by scambier         ###   ########.fr       */
+/*   Updated: 2023/11/16 01:17:07 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 static int	get_word_length(long n)
