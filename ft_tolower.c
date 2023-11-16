@@ -6,13 +6,13 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:48:54 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/08 16:31:20 by scambier         ###   ########.fr       */
+/*   Updated: 2023/11/16 00:22:52 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c - 'A' + 'a');
+	if (c >= 65 && c <= 90)
+		return (c + 32);
 	return (c);
 }
