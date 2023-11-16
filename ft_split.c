@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 15:28:30 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/11 16:35:07 by scambier         ###   ########.fr       */
+/*   Updated: 2023/11/16 00:59:46 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,17 @@ static int	get_word_len(char const *str, char c)
 	return (k);
 }
 
+static int	free_all(char **array)
+{
+	int	k;
+
+	k = 0;
+	while (array[k])
+		free(array[k++]);
+	free(array);
+	return (1);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**out;
@@ -57,6 +68,8 @@ char	**ft_split(char const *s, char c)
 			s++;
 		word_len = get_word_len(s, c);
 		out[k] = ft_substr(s, 0, word_len);
+		if (!out[k] && free_all(out))
+			return (0);
 		s += word_len;
 		k++;
 	}
