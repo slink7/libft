@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2023/11/16 01:00:00 by scambier         ###   ########.fr        #
+#    Updated: 2023/12/19 15:25:52 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,9 @@ SRC = \
 	ft_putchar_fd.c\
 	ft_itoa.c\
 	ft_strmapi.c\
-	ft_striteri.c
+	ft_striteri.c\
+	ft_max.c\
+	ft_min.c
 SRC_BONUS = \
 	ft_lstnew_bonus.c\
 	ft_lstadd_front_bonus.c\
