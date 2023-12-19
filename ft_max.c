@@ -6,11 +6,11 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:23:46 by scambier          #+#    #+#             */
-/*   Updated: 2023/12/19 15:24:05 by scambier         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:33:43 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_max(int a, int b)
 {
-	return (a > b) * a + (a <= b) * b;
+	return ((a > b) * a + (a <= b) * b);
 }

@@ -6,11 +6,11 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:25:07 by scambier          #+#    #+#             */
-/*   Updated: 2023/12/19 15:25:34 by scambier         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:33:45 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_min(int a, int b)
 {
-	return (a < b) * a + (a >= b) * b;
+	return ((a < b) * a + (a >= b) * b);
 }
