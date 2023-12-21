@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:27:27 by scambier          #+#    #+#             */
-/*   Updated: 2023/12/19 15:33:22 by scambier         ###   ########.fr       */
+/*   Updated: 2023/12/21 23:12:18 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 int		ft_max(int a, int b);
 int		ft_min(int a, int b);
+int		ft_abs(int a, int b);
 
 #endif
