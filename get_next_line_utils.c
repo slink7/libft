@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:07:41 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/06 19:50:00 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/06 19:52:39 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,10 @@ int	has_char(char *str, char c)
 		if (str[k] == c)
 			return (k);
 	return (-1);
+}
+
+void	ft_strnset(char *str, char c, int n)
+{
+	while (--n >= 0)
+		str[n] = c;
 }
