@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:07:41 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/06 16:39:58 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/06 19:50:00 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,6 @@
 #include <unistd.h>
 
 #include "get_next_line.h"
-
-int	ft_strlen(const char *str)
-{
-	int	k;
-
-	k = 0;
-	while (str[k])
-		k++;
-	return (k);
-}
 
 int	has_char(char *str, char c)
 {
