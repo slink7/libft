@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:40:22 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/06 19:49:41 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:21:40 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <unistd.h>
 
 #include "libft.h"
-#include "get_next_line.h"
 
 void	ft_strmcat(char **dst, char *src)
 {

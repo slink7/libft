@@ -6,14 +6,14 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:07:41 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/06 19:52:39 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:21:33 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "get_next_line.h"
+#include "libft.h"
 
 int	has_char(char *str, char c)
 {
