@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/01/10 16:27:13 by scambier         ###   ########.fr        #
+#    Updated: 2024/01/10 17:50:29 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC = \
 	ft_memcmp.c\
 	ft_strnstr.c\
 	ft_atoi.c\
+	ft_atoi_strict.c\
 	ft_calloc.c\
 	ft_strdup.c\
 	ft_substr.c\
