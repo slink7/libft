@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/01/06 16:09:04 by scambier         ###   ########.fr        #
+#    Updated: 2024/01/10 16:27:13 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,8 +50,7 @@ SRC = \
 	ft_max.c\
 	ft_min.c\
 	get_next_line.c\
-	get_next_line_utils.c
-SRC_BONUS = \
+	get_next_line_utils.c\
 	ft_lstnew_bonus.c\
 	ft_lstadd_front_bonus.c\
 	ft_lstsize_bonus.c\
@@ -61,18 +60,15 @@ SRC_BONUS = \
 	ft_lstclear_bonus.c\
 	ft_lstiter_bonus.c\
 	ft_lstmap_bonus.c
+	
 
 OBJ = $(addsuffix .o, $(notdir $(basename $(SRC))))
-OBJ_BONUS = $(addsuffix .o, $(notdir $(basename $(SRC_BONUS))))
 
 CFLAGS = -Wall -Werror -Wextra
 
 default : all
 
 all : $(NAME)
-
-bonus : $(OBJ) $(OBJ_BONUS)
-	ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
 
 %.o : %.c
 	cc $(CFLAGS) -o $@ -c $< $()
@@ -90,24 +86,3 @@ re : fclean all
 
 
 .PHONY : re fclean clean all default
-
-# test :
-# 	cc *.c -lbsd -g3
-# 	./a.out
-
-# test_clean : fclean
-# 	rm ./a.out || true
-# 	rm libft.so || true
-
-# so :
-# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRC_BONUS)
-# 	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJ_BONUS)
-
-# unit :
-# 	cd ../libft-unit-test ; make f
-
-# trip :
-# 	rm libft.so || true
-# 	cd tripouille ; make a
-
-# .PHONY : test_clean so unit trip
