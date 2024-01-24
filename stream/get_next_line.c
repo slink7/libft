@@ -6,16 +6,16 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:40:22 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/10 16:21:40 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/24 17:26:30 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_strmcat(char **dst, char *src)
+static void	ft_strmcat(char **dst, char *src)
 {
 	char	*out;
 	int		dst_len;
@@ -43,7 +43,7 @@ void	ft_strmcat(char **dst, char *src)
 	*dst = out;
 }
 
-char	*ft_stralloc(int len, char c)
+static char	*ft_stralloc(int len, char c)
 {
 	char	*out;
 
@@ -55,7 +55,7 @@ char	*ft_stralloc(int len, char c)
 	return (out);
 }
 
-void	ft_moise(char **out, char **in)
+static void	ft_moise(char **out, char **in)
 {
 	char	*new_in;
 	int		in_len;
@@ -64,8 +64,8 @@ void	ft_moise(char **out, char **in)
 	if (!*in)
 		return ;
 	in_len = ft_strlen(*in);
-	bn_index = has_char(*in, 10);
-	if (bn_index == -1)
+	bn_index = ft_strchr(*in, 10) - *in;
+	if (bn_index == 0)
 		bn_index = in_len;
 	*out = ft_substr(*in, 0, bn_index + 1);
 	if (bn_index == in_len)
@@ -76,7 +76,7 @@ void	ft_moise(char **out, char **in)
 	*in = new_in;
 }
 
-void	ft_read(int fd, char **out)
+static void	ft_read(int fd, char **out)
 {
 	char	*buffer;
 	int		read_len;
@@ -99,7 +99,7 @@ void	ft_read(int fd, char **out)
 		ft_strmcat(out, buffer);
 		if (read_len < BUFFER_SIZE)
 			break ;
-		if (has_char(*out, 10) != -1)
+		if (ft_strchr(*out, 10) != 0)
 			break ;
 	}
 	free(buffer);

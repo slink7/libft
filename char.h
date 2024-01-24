@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   char.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 16:07:41 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/10 16:21:33 by scambier         ###   ########.fr       */
+/*   Created: 2024/01/24 16:44:15 by scambier          #+#    #+#             */
+/*   Updated: 2024/01/24 16:44:44 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
+#ifndef CHAR_H
+# define CHAR_H
 
-#include "libft.h"
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
-int	has_char(char *str, char c)
-{
-	int	k;
-
-	k = -1;
-	while (str[++k])
-		if (str[k] == c)
-			return (k);
-	return (-1);
-}
-
-void	ft_strnset(char *str, char c, int n)
-{
-	while (--n >= 0)
-		str[n] = c;
-}
+#endif
