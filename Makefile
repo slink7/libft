@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/01/24 17:47:56 by scambier         ###   ########.fr        #
+#    Updated: 2024/01/24 18:08:55 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC = \
 	str/ft_strrchr.c\
 	str/ft_strncmp.c\
 	str/ft_strnstr.c\
+	str/ft_strnset.c\
 	str/ft_atoi.c\
 	str/ft_atoi_strict.c\
 	str/ft_strdup.c\
