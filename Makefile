@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/01/24 17:19:43 by scambier         ###   ########.fr        #
+#    Updated: 2024/01/24 17:47:56 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,8 @@ SRC = \
 	str/ft_itoa.c\
 	str/ft_strmapi.c\
 	str/ft_striteri.c\
+	str/ft_strarrfree.c\
+	str/ft_strarrlen.c\
 	lst/ft_lstnew.c\
 	lst/ft_lstadd_front.c\
 	lst/ft_lstsize.c\
