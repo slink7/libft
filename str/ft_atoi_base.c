@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 14:00:50 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/26 14:09:08 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:54:28 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_atoi_base(char *str, char *base)
 			sign *= -1;
 		str++;
 	}
-	while (*str && ft_strchri(base, *str) >= 0)
+	while (*str && *str != '\n' && ft_strchri(base, *str) >= 0)
 	{
 		out *= ibase;
 		out += ft_strchri(base, *str);

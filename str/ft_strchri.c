@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 14:07:56 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/26 14:10:37 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:54:22 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 int	ft_strchri(char *str, char c)
 {
-	return (ft_strchr(str, c) - str);
+	int	k;
+
+	k = -1;
+	while (str[++k])
+		if (str[k] == c)
+			return (k);
+	return (0);
 }
