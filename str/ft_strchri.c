@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*   ft_strchri.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 14:00:50 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/26 14:09:08 by scambier         ###   ########.fr       */
+/*   Created: 2024/01/26 14:07:56 by scambier          #+#    #+#             */
+/*   Updated: 2024/01/26 14:10:37 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi_base(char *str, char *base)
+int	ft_strchri(char *str, char c)
 {
-	int		ibase;
-	int		sign;
-	int		out;
-
-	ibase = ft_strlen(base);
-	sign = 1;
-	out = 0;
-	while ((*str && *str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	while (*str && (*str == '+' || *str == '-'))
-	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
-	}
-	while (*str && ft_strchri(base, *str) >= 0)
-	{
-		out *= ibase;
-		out += ft_strchri(base, *str);
-		str++;
-	}
-	return (sign * out);
+	return (ft_strchr(str, c) - str);
 }
