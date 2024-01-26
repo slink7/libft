@@ -6,11 +6,11 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 14:53:09 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/26 14:53:37 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:07:36 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-float	ft_fmin(float a, float b)
+float	ft_fmax(float a, float b)
 {
 	return ((a > b) * a + (a <= b) * b);
 }
