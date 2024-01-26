@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftmath.h                                           :+:      :+:    :+:   */
+/*   ft_clamp.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 16:48:19 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/26 14:58:23 by scambier         ###   ########.fr       */
+/*   Created: 2024/01/26 14:58:03 by scambier          #+#    #+#             */
+/*   Updated: 2024/01/26 14:58:54 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTMATH_H
-# define FTMATH_H
+#include "libft.h"
 
-float	ft_fmin(float a, float b);
-float	ft_fmax(float a, float b);
-float	ft_fabs(float x);
-float	ft_fclamp(float min, float x, float max);
-
-int		ft_min(int a, int b);
-int		ft_max(int a, int b);
-int		ft_abs(int x);
-int		ft_clamp(int min, int x, int max);
-
-#endif
+//(min >= x) ? min : (max <= x) ? max : x
+int	ft_clamp(int min, int x, int max)
+{
+	return (ft_max(min, ft_min(x, max)));
+}
