@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 16:59:29 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/11 18:10:26 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/26 20:53:56 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	if (!s)
+		return (write(fd, "(null)", 6));
+	return (write(fd, s, ft_strlen(s)));
 }

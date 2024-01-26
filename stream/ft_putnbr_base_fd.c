@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_base_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 16:45:49 by scambier          #+#    #+#             */
-/*   Updated: 2023/11/11 18:13:43 by scambier         ###   ########.fr       */
+/*   Created: 2024/01/26 20:09:43 by scambier          #+#    #+#             */
+/*   Updated: 2024/01/26 20:54:37 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,21 @@
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_putnbr_base_fd(long nbr, char *base, int fd)
 {
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	int			ibase;
+	long int	cast;
+	int			out;
+
+	ibase = ft_strlen(base);
+	cast = nbr;
+	out = 0;
+	if (cast < 0)
+	{
+		out += write(fd, "-", 1);
+		cast *= -1;
+	}
+	if (cast > ibase - 1)
+		out += ft_putnbr_base_fd(cast / ibase, base, fd);
+	return (out + write(fd, base + (cast % ibase), 1));
 }

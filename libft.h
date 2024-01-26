@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:27:27 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/25 16:40:35 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/26 20:44:37 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 # include "stream.h"
 # include "lst.h"
 # include "ftmath.h"
+# include "ft_printf.h"
 
 #endif
