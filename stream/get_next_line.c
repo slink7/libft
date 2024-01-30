@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:40:22 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/24 17:26:30 by scambier         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:06:03 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,6 @@ static void	ft_strmcat(char **dst, char *src)
 	*dst = out;
 }
 
-static char	*ft_stralloc(int len, char c)
-{
-	char	*out;
-
-	out = malloc(len);
-	if (!out)
-		return (0);
-	while (--len >= 0)
-		out[len] = c;
-	return (out);
-}
-
 static void	ft_moise(char **out, char **in)
 {
 	char	*new_in;
@@ -82,8 +70,8 @@ static void	ft_read(int fd, char **out)
 	int		read_len;
 
 	if (!*out)
-		*out = ft_stralloc(1, 0);
-	buffer = ft_stralloc(BUFFER_SIZE + 1, 0);
+		*out = ft_calloc(1, sizeof(char));
+	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	while (1)
 	{
 		ft_strnset(buffer, 0, BUFFER_SIZE);
@@ -105,12 +93,25 @@ static void	ft_read(int fd, char **out)
 	free(buffer);
 }
 
+int	free_buffer(char *buffer[1024])
+{
+	int	k;
+
+	k = -1;
+	while (++k < 1024)
+		if (buffer[k])
+			free(buffer[k]);
+	return (1);
+}
+
 char	*get_next_line(int fd)
 {
 	static char	*buffer[1024];
 	char		*out;
 
 	out = 0;
+	if (fd < 0 && free_buffer(buffer))
+		return (0);
 	if (read(fd, 0, 0) < 0)
 	{
 		if (fd < 0 || fd > 1024)
