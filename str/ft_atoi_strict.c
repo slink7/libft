@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:47:01 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/04 21:02:42 by scambier         ###   ########.fr       */
+/*   Updated: 2024/03/04 22:57:51 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_atoi_strict(int *out, char *in)
 	int	sign;
 
 	*out = 0;
-	if (ft_strncmp("2147483648", in, 12) < 0)
+	if (ft_strncmp("2147483648", in, 12) <= 0)
 		return (0);
 	sign = 1;
 	if (*in == '-' && in++)
