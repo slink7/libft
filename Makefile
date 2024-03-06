@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/03/06 03:06:28 by scambier         ###   ########.fr        #
+#    Updated: 2024/03/06 03:27:07 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,9 @@ SRC = \
 	bst/ft_bst_new.c\
 	bst/ft_bst_setvar.c\
 	bst/ft_var_new.c\
+	bit/ft_bit_get.c\
+	bit/ft_bit_set.c\
+	bit/ft_bit_invert.c\
 
 OBJ = $(SRC:.c=.o)
 
