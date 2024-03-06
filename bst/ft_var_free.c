@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_var_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:27:27 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/06 02:49:33 by scambier         ###   ########.fr       */
+/*   Created: 2024/03/06 02:38:48 by scambier          #+#    #+#             */
+/*   Updated: 2024/03/06 03:02:30 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdlib.h>
 
-# include "mem.h"
-# include "char.h"
-# include "str.h"
-# include "stream.h"
-# include "lst.h"
-# include "ftmath.h"
-# include "ft_printf.h"
-# include "bst.h"
+#include "libft.h"
 
-#endif
+void	ft_var_free(t_var **var)
+{
+	free((*var)->name);
+	if ((*var)->value)
+		free((*var)->value);
+	free(*var);
+	*var = 0;
+}

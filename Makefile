@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/03/04 17:57:56 by scambier         ###   ########.fr        #
+#    Updated: 2024/03/06 03:06:28 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,11 +73,19 @@ SRC = \
 	math/ft_fabs.c\
 	math/ft_fclamp.c\
 	printf/ft_printf.c\
-	printf/putters0.c
+	printf/putters0.c\
+	bst/ft_bst_fetch.c\
+	bst/ft_bst_getvar.c\
+	bst/ft_bst_print.c\
+	bst/ft_var_free.c\
+	bst/ft_bst_free.c\
+	bst/ft_bst_new.c\
+	bst/ft_bst_setvar.c\
+	bst/ft_var_new.c\
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3
 
 default : all
 
