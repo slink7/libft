@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strbuilder_new.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:27:27 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/09 18:41:06 by scambier         ###   ########.fr       */
+/*   Created: 2024/03/09 18:40:18 by scambier          #+#    #+#             */
+/*   Updated: 2024/03/09 18:42:29 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdlib.h>
 
-# include "mem.h"
-# include "char.h"
-# include "str.h"
-# include "stream.h"
-# include "lst.h"
-# include "ftmath.h"
-# include "ft_printf.h"
-# include "bst.h"
-# include "bit.h"
-# include "strbuilder.h"
+#include "libft.h"
 
-#endif
+t_strbuilder	*ft_strbuilder_new(void)
+{
+	t_strbuilder	*out;
+
+	out = malloc(sizeof(t_strbuilder));
+	out->content = ft_calloc(STRBUILDER_SIZE + 1, 1);
+	out->index = 0;
+	out->next = 0;
+	return (out);
+}

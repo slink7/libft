@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strbuilder_build.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:27:27 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/09 18:41:06 by scambier         ###   ########.fr       */
+/*   Created: 2024/03/09 18:42:42 by scambier          #+#    #+#             */
+/*   Updated: 2024/03/09 19:01:22 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdlib.h>
 
-# include "mem.h"
-# include "char.h"
-# include "str.h"
-# include "stream.h"
-# include "lst.h"
-# include "ftmath.h"
-# include "ft_printf.h"
-# include "bst.h"
-# include "bit.h"
-# include "strbuilder.h"
+#include "libft.h"
 
-#endif
+char	*ft_strbuilder_build(t_strbuilder *buffer)
+{
+	t_strbuilder	*index;
+	int				len;
+	char			*out;
+	int				out_k;
+
+	len = ft_strbuilder_len(buffer);
+	out = malloc(len + 1);
+	index = buffer;
+	out_k = 0;
+	while (index)
+	{
+		ft_strlcpy(out + out_k, index->content, index->index + 1);
+		out_k += index->index;
+		index = index->next;
+	}
+	return (out);
+}

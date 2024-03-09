@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/03/06 03:27:07 by scambier         ###   ########.fr        #
+#    Updated: 2024/03/09 18:50:47 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,12 @@ SRC = \
 	bit/ft_bit_get.c\
 	bit/ft_bit_set.c\
 	bit/ft_bit_invert.c\
+	strbuilder/ft_strbuilder_new.c\
+	strbuilder/ft_strbuilder_free.c\
+	strbuilder/ft_strbuilder_addchar.c\
+	strbuilder/ft_strbuilder_addstr.c\
+	strbuilder/ft_strbuilder_len.c\
+	strbuilder/ft_strbuilder_build.c\
 
 OBJ = $(SRC:.c=.o)
 

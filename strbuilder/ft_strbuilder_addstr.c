@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strbuilder_addstr.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:27:27 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/09 18:41:06 by scambier         ###   ########.fr       */
+/*   Created: 2024/03/09 18:47:54 by scambier          #+#    #+#             */
+/*   Updated: 2024/03/09 19:01:14 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include "mem.h"
-# include "char.h"
-# include "str.h"
-# include "stream.h"
-# include "lst.h"
-# include "ftmath.h"
-# include "ft_printf.h"
-# include "bst.h"
-# include "bit.h"
-# include "strbuilder.h"
-
-#endif
+void	ft_strbuilder_addstr(t_strbuilder *buffer, char *str)
+{
+	while (*str)
+		ft_strbuilder_addchar(buffer, *str++);
+}
