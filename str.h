@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:55:08 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/11 16:31:52 by scambier         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:22:38 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_strnset(char *str, char c, int n);
 int		ft_strarrfree(char **strarr);
 int		ft_strarrlen(char **strarr);
+char	*ft_strchrf(char *str, int (*f)(int), int inverted);
+char	**ft_splitf(char *str, int (*f)(int));
 int		ft_strchri(char *str, char c);
 int		ft_atoi_base(char *str, char *base);
-char	*ft_strchrf(char *str, int(*f)(int), int inverted);
-char	**ft_splitf(char *str, int(*f)(int));
 
 #endif

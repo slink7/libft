@@ -6,13 +6,13 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:02:54 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/11 17:09:24 by scambier         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:22:44 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(char *str, int(*f)(int))
+static int	word_count(char *str, int (*f)(int))
 {
 	int	out;
 
@@ -26,7 +26,7 @@ static int	word_count(char *str, int(*f)(int))
 	return (out);
 }
 
-char	**ft_splitf(char *str, int(*f)(int))
+char	**ft_splitf(char *str, int (*f)(int))
 {
 	int		words;
 	char	**out;
