@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:47:01 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/07 15:13:14 by scambier         ###   ########.fr       */
+/*   Updated: 2024/03/18 17:09:22 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	ft_atoi_strict(int *out, char *in)
 	sign = 1;
 	if (*in == '-' && in++)
 		sign = -1;
+	if (!*in)
+		return (0);
 	while (*in)
 	{
 		if (!ft_isdigit(*in))
