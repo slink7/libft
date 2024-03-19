@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bst.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymostows <ymostows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:31:40 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/06 03:01:22 by scambier         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:52:25 by ymostows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ t_var		*ft_bst_fetch(t_bst **bst, char *name);
 void		*ft_bst_getvar(t_bst *bst, char *name);
 void		ft_bst_setvar(t_bst **bst, char *name, char *value);
 void		ft_bst_print(t_bst *bst);
+int			ft_bst_size(t_bst *bst);
 
 #endif

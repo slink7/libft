@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
+#    By: ymostows <ymostows@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/03/11 16:33:13 by scambier         ###   ########.fr        #
+#    Updated: 2024/03/19 14:53:44 by ymostows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,6 +84,8 @@ SRC = \
 	bst/ft_bst_new.c\
 	bst/ft_bst_setvar.c\
 	bst/ft_var_new.c\
+	bst/ft_bst_size.c\
+	bst/ft_bst_export.c\
 	bit/ft_bit_get.c\
 	bit/ft_bit_set.c\
 	bit/ft_bit_invert.c\
