@@ -18,7 +18,7 @@ static void	ft_bst_export_rec(t_bst *bst, char **array, int *i)
 	if (!bst)
 		return ;
 	ft_bst_export_rec(bst->left, array, i);
-	array[(*i)++] = ft_strjoin_free(ft_strjoin(bst->var->name,"="), bst->var->value);
+	array[(*i)++] = ft_strjoin_free(ft_strjoin(bst->var->name, "="), bst->var->value);
 	ft_bst_export_rec(bst->right, array, i);
 }
 
@@ -26,6 +26,7 @@ char	**ft_bst_export(t_bst *bst)
 {
 	char	**array;
 	int		i;
+
 	if (!bst)
 		return (0);
 	array = ft_calloc(ft_bst_size(bst) + 1, sizeof(char *));
