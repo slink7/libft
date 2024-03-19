@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymostows <ymostows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:55:08 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/12 16:22:38 by scambier         ###   ########.fr       */
+/*   Updated: 2024/03/19 15:57:39 by ymostows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ char	*ft_strchrf(char *str, int (*f)(int), int inverted);
 char	**ft_splitf(char *str, int (*f)(int));
 int		ft_strchri(char *str, char c);
 int		ft_atoi_base(char *str, char *base);
+char	*ft_strjoin_free(char *backup, char *buffer);
 
 #endif
