@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/03/19 18:16:08 by scambier         ###   ########.fr        #
+#    Updated: 2024/03/19 19:08:10 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,6 +89,7 @@ SRC = \
 	bst/ft_bst_export.c\
 	bst/ft_bst_find_min.c\
 	bst/ft_bst_remove.c\
+	bst/ft_bst_find.c\
 	bit/ft_bit_get.c\
 	bit/ft_bit_set.c\
 	bit/ft_bit_invert.c\
@@ -122,7 +123,7 @@ fclean : clean
 re : fclean all
 
 test : all
-	cc main.c -c
+	cc main.c -g3 -c
 	cc main.o -L. -lft
 
 .PHONY : re fclean clean all default

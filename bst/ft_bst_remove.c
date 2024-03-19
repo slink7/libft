@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:46:39 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/19 18:28:50 by scambier         ###   ########.fr       */
+/*   Updated: 2024/03/19 19:11:56 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,36 @@
 
 #include "libft.h"
 
+static void	remove(t_bst **bst)
+{
+	ft_var_free(&(*bst)->var);
+	free(*bst);
+	*bst = 0;
+
+}
+
 t_bst	*ft_bst_remove(t_bst **bst, char *name)
 {
+	t_bst	**target;
 	t_bst	*temp;
-	int		cmp;
-
-	if (!bst || !*bst)
+	
+	target = ft_bst_find(bst, name);
+	if (!target)
 		return (0);
-	cmp = ft_strncmp(name, (*bst)->var->name, ft_strlen(name) + 1);
-	if (cmp < 0)
-		ft_bst_remove(&(*bst)->left, name);
-	else if (cmp > 0)
-		ft_bst_remove(&(*bst)->right, name);
-	else
+	if (!(*target)->left)
 	{
-		if (!(*bst)->left)
-		{
-			temp = (*bst)->right;
-			ft_var_free(&(*bst)->var);
-			free(*bst);
-			*bst = 0;
-			return (temp);
-		}
-		else if (!(*bst)->right)
-		{
-			temp = (*bst)->left;
-			ft_var_free(&(*bst)->var);
-			free(*bst);
-			*bst = 0;
-			return (temp);
-		}
-		temp = ft_bst_find_min(*bst);
-		(*bst)->var = temp->var;
-		(*bst)->right = ft_bst_remove(&(*bst)->right, temp->var->name);
+		temp = (*target)->right;
+		remove(target);
+		return (temp);
 	}
-	return (*bst);
+	else if (!(*target)->right)
+	{
+		temp = (*target)->right;
+		remove(target);
+		return (temp);
+	}
+	temp = ft_bst_find_min(*bst);
+	(*target)->var = temp->var;
+	(*target)->right = ft_bst_remove(&(*target)->right, temp->var->name);
+	return (*target);
 }
