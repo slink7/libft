@@ -13,13 +13,15 @@
 #include "libft.h"
 #include <stdio.h>
 
-static void	ft_bst_export_rec(t_bst *b, char **a, int *i)
+static void	ft_bst_export_rec(t_bst *bst, char **out, int *i)
 {
-	if (!b)
+	if (!bst)
 		return ;
-	ft_bst_export_rec(b->left, a, i);
-	a[(*i)++] = ft_strsjoin((char *[]){b->var->name, b->var->value, 0}, "=");
-	ft_bst_export_rec(b->right, a, i);
+	ft_bst_export_rec(bst->left, out, i);
+	out[(*i)++] = ft_strsjoin((char *[]){
+			bst->var->name, "=", bst->var->value, 0
+		}, "");
+	ft_bst_export_rec(bst->right, out, i);
 }
 
 char	**ft_bst_export(t_bst *bst)
