@@ -13,26 +13,26 @@
 #include "libft.h"
 #include <stdio.h>
 
-static void	ft_bst_export_rec(t_bst *bst, char **array, int *i)
+static void	ft_bst_export_rec(t_bst *b, char **a, int *i)
 {
-	if (!bst)
+	if (!b)
 		return ;
-	ft_bst_export_rec(bst->left, array, i);
-	array[(*i)++] = ft_strjoin_free(ft_strjoin(bst->var->name, "="), bst->var->value);
-	ft_bst_export_rec(bst->right, array, i);
+	ft_bst_export_rec(b->left, a, i);
+	a[(*i)++] = ft_strsjoin((char *[]){b->var->name, b->var->value, 0}, "=");
+	ft_bst_export_rec(b->right, a, i);
 }
 
 char	**ft_bst_export(t_bst *bst)
 {
-	char	**array;
+	char	**out;
 	int		i;
 
 	if (!bst)
 		return (0);
-	array = ft_calloc(ft_bst_size(bst) + 1, sizeof(char *));
-	if (!array)
+	out = ft_calloc(ft_bst_size(bst) + 1, sizeof(char *));
+	if (!out)
 		return (0);
 	i = 0;
-	ft_bst_export_rec(bst, array, &i);
-	return (array);
+	ft_bst_export_rec(bst, out, &i);
+	return (out);
 }
