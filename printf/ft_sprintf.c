@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 02:24:33 by scambier          #+#    #+#             */
-/*   Updated: 2024/04/06 20:33:34 by scambier         ###   ########.fr       */
+/*   Updated: 2024/04/07 00:59:32 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	*handle_format(char *f, va_list ap)
 		return (ft_strdup(va_arg(ap, char *)));
 	else if (*f == 'd')
 		return (ft_itoa(va_arg(ap, int)));
-	return (0);
+	return (ft_substr(f - 1, 0, 2));
 }
 
 char	*ft_vsprintf(char *format, va_list ap)
@@ -30,6 +30,8 @@ char	*ft_vsprintf(char *format, va_list ap)
 	char			*index;
 	char			*out;
 
+	if (!format)
+		return (0);
 	builder = ft_strbuilder_new();
 	index = ft_strchr(format, '%');
 	while (index)
