@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/04/06 02:44:00 by scambier         ###   ########.fr        #
+#    Updated: 2024/04/06 14:35:55 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,9 +78,10 @@ SRC = \
 	math/ft_fmax.c\
 	math/ft_fabs.c\
 	math/ft_fclamp.c\
-	printf/ft_printf.c\
 	printf/putters0.c\
 	printf/ft_sprintf.c\
+	printf/ft_fprintf.c\
+	printf/ft_printf.c\
 	bst/ft_bst_fetch.c\
 	bst/ft_bst_getvar.c\
 	bst/ft_bst_print.c\

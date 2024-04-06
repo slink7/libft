@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_fprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 19:57:03 by scambier          #+#    #+#             */
-/*   Updated: 2024/04/06 14:31:39 by scambier         ###   ########.fr       */
+/*   Created: 2024/04/06 13:48:32 by scambier          #+#    #+#             */
+/*   Updated: 2024/04/06 14:37:33 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include <stdlib.h>
+#include <unistd.h>
 
-# include <stdarg.h>
+#include "libft.h"
 
-char	*ft_vsprintf(char *format, va_list ap);
-int		ft_vfprintf(int fd, char *format, va_list ap);
-int		ft_vprintf(char *format, va_list ap);
+int	ft_vfprintf(int fd, char *format, va_list ap)
+{
+	char	*temp;
+	int		out;
 
-char	*ft_sprintf(char *format, ...);
-int		ft_fprintf(int fd, char *format, ...);
-int		ft_printf(char *format, ...);
+	temp = ft_vsprintf(format, ap);
+	out = write(fd, temp, ft_strlen(temp));
+	free(temp);
+	return (out);
+}
 
-#endif
+int	ft_fprintf(int fd, char *format, ...)
+{
+	va_list	ap;
+	int		out;
+
+	va_start(ap, format);
+	out = ft_vfprintf(fd, format, ap);
+	va_end(ap);
+	return (out);
+}
