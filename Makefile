@@ -6,9 +6,11 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/03/21 07:34:40 by scambier         ###   ########.fr        #
+#    Updated: 2024/04/06 02:21:59 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+#=== CONFIG ===
 
 NAME = libft.a
 
@@ -101,22 +103,28 @@ SRC = \
 	strbuilder/ft_strbuilder_len.c\
 	strbuilder/ft_strbuilder_build.c\
 
-OBJ = $(SRC:.c=.o)
-
+OBJ_DIR = obj
 CFLAGS = -Wall -Werror -Wextra -g3
+
+#=== AUTOMATIC VARS ===
+
+OBJ = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(SRC))))
+
+#=== TARGETS ===
 
 default : all
 
 all : $(NAME)
 
-%.o : %.c
+$(OBJ_DIR)/%.o : %.c
+	@mkdir -p $(dir $@)
 	cc $(CFLAGS) -o $@ -c $< -I.
 
 $(NAME) : $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 clean :
-	rm -rf $(OBJ) || true
+	rm -rf $(OBJ_DIR) || true
 
 fclean : clean
 	rm $(NAME) || true
