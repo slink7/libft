@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 02:24:33 by scambier          #+#    #+#             */
-/*   Updated: 2024/04/06 14:32:18 by scambier         ###   ########.fr       */
+/*   Updated: 2024/04/06 14:39:33 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "libft.h"
 
-char	*handle_format(char *f, va_list ap)
+static char	*handle_format(char *f, va_list ap)
 {
 	if (*f == 's')
 		return (ft_strdup(va_arg(ap, char *)));
