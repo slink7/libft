@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 02:24:33 by scambier          #+#    #+#             */
-/*   Updated: 2024/04/07 00:59:32 by scambier         ###   ########.fr       */
+/*   Updated: 2024/04/07 01:02:31 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,8 @@ char	*ft_vsprintf(char *format, va_list ap)
 	{
 		ft_strbuilder_addstr(builder, format, index - format);
 		out = handle_format(index + 1, ap);
-		if (out)
-		{
-			ft_strbuilder_addstr(builder, out, ft_strlen(out));
+		if (out && ft_strbuilder_addstr(builder, out, ft_strlen(out)))
 			free(out);
-		}
 		else
 			ft_strbuilder_addstr(builder, "(null)", 6);
 		format = index + 2;
