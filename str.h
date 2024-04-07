@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:55:08 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/21 07:34:34 by scambier         ###   ########.fr       */
+/*   Updated: 2024/04/07 01:32:07 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char	**ft_split(char const *s, char c);
 int		ft_atoi(const char *nptr);
 int		ft_atoi_strict(int *out, char *in);
 char	*ft_itoa(int n);
+char	*ft_itoa_base(unsigned int k, char *base);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_strnset(char *str, char c, int n);
