@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 02:24:33 by scambier          #+#    #+#             */
-/*   Updated: 2024/04/07 02:35:57 by scambier         ###   ########.fr       */
+/*   Updated: 2024/04/07 17:29:32 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static char	*handle_format(char *f, va_list ap)
 		return (ft_itoa_base(va_arg(ap, unsigned int), "0123456789abcdef"));
 	else if (*f == 'X')
 		return (ft_itoa_base(va_arg(ap, unsigned int), "0123456789ABCDEF"));
+	else if (*f == 'u')
+		return (ft_itoa_base(va_arg(ap, unsigned int), "0123456789"));
 	return (ft_substr(f - 1, 0, 2));
 }
 
