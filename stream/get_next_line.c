@@ -6,14 +6,14 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:40:22 by scambier          #+#    #+#             */
-/*   Updated: 2024/01/30 14:06:03 by scambier         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:27:12 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "../libft.h"
+#include "libft.h"
 
 static void	ft_strmcat(char **dst, char *src)
 {
@@ -53,8 +53,6 @@ static void	ft_moise(char **out, char **in)
 		return ;
 	in_len = ft_strlen(*in);
 	bn_index = ft_strchr(*in, 10) - *in;
-	if (bn_index == 0)
-		bn_index = in_len;
 	*out = ft_substr(*in, 0, bn_index + 1);
 	if (bn_index == in_len)
 		new_in = 0;
