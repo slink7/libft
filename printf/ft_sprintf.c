@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 02:24:33 by scambier          #+#    #+#             */
-/*   Updated: 2024/04/07 17:29:32 by scambier         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:41:57 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 #include <stdlib.h>
 
 #include "libft.h"
+
+static char	*char_to_str(char c)
+{
+	char	*out;
+
+	out = ft_calloc(2, sizeof(char));
+	out[0] = c;
+	return (out);
+}
 
 static char	*handle_format(char *f, va_list ap)
 {
@@ -27,6 +36,8 @@ static char	*handle_format(char *f, va_list ap)
 		return (ft_itoa_base(va_arg(ap, unsigned int), "0123456789ABCDEF"));
 	else if (*f == 'u')
 		return (ft_itoa_base(va_arg(ap, unsigned int), "0123456789"));
+	else if (*f == 'c')
+		return (char_to_str(va_arg(ap, int)));
 	return (ft_substr(f - 1, 0, 2));
 }
 
