@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/04/07 01:13:34 by scambier         ###   ########.fr        #
+#    Updated: 2024/05/08 19:05:10 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ SRC = \
 	lst/ft_lstclear.c\
 	lst/ft_lstiter.c\
 	lst/ft_lstmap.c\
+	lst/ft_lstexport.c\
 	stream/get_next_line.c\
 	stream/ft_putnbr_fd.c\
 	stream/ft_putstr_fd.c\
