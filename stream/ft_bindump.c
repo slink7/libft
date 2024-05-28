@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 15:38:51 by scambier          #+#    #+#             */
-/*   Updated: 2024/05/28 16:38:34 by scambier         ###   ########.fr       */
+/*   Updated: 2024/05/28 17:26:44 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #define HEX "0123456789ABCDEF"
 
-void	ppp(char *ptr, int len, int bpl)
+static void	put_bin_line(char *ptr, int len, int bpl)
 {
 	char	*buffer;
 	int		k;
@@ -50,7 +50,7 @@ void	ft_bindump(char *ptr, int len, int bpl)
 {
 	while (len > 0)
 	{
-		ppp(ptr, ft_min(len, bpl), bpl);
+		put_bin_line(ptr, ft_min(len, bpl), bpl);
 		ptr += bpl;
 		len -= bpl;
 	}
