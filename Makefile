@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/05/28 15:48:48 by scambier         ###   ########.fr        #
+#    Updated: 2024/05/28 17:39:40 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,6 +76,7 @@ SRC = \
 	stream/ft_putnbr_base_fd.c\
 	stream/ft_get_file.c\
 	stream/ft_bindump.c\
+	stream/ft_hexdump.c\
 	math/ft_min.c\
 	math/ft_max.c\
 	math/ft_abs.c\
