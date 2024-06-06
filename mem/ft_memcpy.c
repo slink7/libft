@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:33:36 by scambier          #+#    #+#             */
-/*   Updated: 2024/06/06 15:23:07 by scambier         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:26:40 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	if (!dst && !src)
 		return (0);
 	while (n--)
-		*((char *)dst + n - 1) = *((char *)src + n - 1);
+		*((char *)dst + n) = *((char *)src + n);
 	return (dst);
 }
