@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 19:17:54 by scambier          #+#    #+#             */
-/*   Updated: 2024/05/10 19:07:23 by scambier         ###   ########.fr       */
+/*   Updated: 2024/06/08 18:16:46 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	ft_get_file(char **dst, char *path, unsigned int buffer_size)
 		temp = read(fd, buffer, buffer_size);
 	}
 	ft_memcat((void **)dst, len, buffer, temp);
+	(*dst)[len - 1] = 0;
 	free(buffer);
 	return (len);
 }
