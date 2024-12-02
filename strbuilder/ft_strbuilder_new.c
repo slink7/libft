@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 18:40:18 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/09 18:42:29 by scambier         ###   ########.fr       */
+/*   Updated: 2024/12/02 17:27:07 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,5 @@
 
 t_strbuilder	*ft_strbuilder_new(void)
 {
-	t_strbuilder	*out;
-
-	out = malloc(sizeof(t_strbuilder));
-	out->content = ft_calloc(STRBUILDER_SIZE + 1, 1);
-	out->index = 0;
-	out->next = 0;
-	return (out);
+	return (ft_calloc(1, sizeof(t_strbuilder)));
 }

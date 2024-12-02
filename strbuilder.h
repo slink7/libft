@@ -6,20 +6,20 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 18:34:49 by scambier          #+#    #+#             */
-/*   Updated: 2024/04/07 01:03:44 by scambier         ###   ########.fr       */
+/*   Updated: 2024/12/02 18:33:26 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRBUILDER_H
 # define STRBUILDER_H
 
-# define STRBUILDER_SIZE 96
+# define STRBUILDER_SIZE 256
 
 typedef struct s_strbuilder	t_strbuilder;
 
 typedef struct s_strbuilder {
 	t_strbuilder	*next;
-	char			*content;
+	char			content[STRBUILDER_SIZE];
 	int				index;
 }	t_strbuilder;
 
