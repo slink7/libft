@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:55:08 by scambier          #+#    #+#             */
-/*   Updated: 2024/05/10 15:46:51 by scambier         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:34:01 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ char	**ft_splitf(char *str, int (*f)(int));
 int		ft_strchri(char *str, char c);
 int		ft_atoi_base(char *str, char *base);
 void	ft_strcat(char **dst, char *src);
+int		ft_strrep(char *str, char from, char to);
 
 #endif
