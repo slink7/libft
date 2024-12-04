@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 18:47:54 by scambier          #+#    #+#             */
-/*   Updated: 2024/12/02 17:17:04 by scambier         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:37:44 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int	ft_strbuilder_addstr(t_strbuilder *buffer, char *str, int len)
 	{
 		to_cpy = STRBUILDER_SIZE - buffer->index;
 		overflow = len - to_cpy;
-		if (overflow > 0) {
+		if (overflow > 0)
+		{
 			ft_strbuilder_addraw(buffer, str, to_cpy);
 			if (!buffer->next)
 				buffer->next = ft_strbuilder_new();
