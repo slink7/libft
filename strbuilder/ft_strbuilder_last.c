@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strbuilder_addraw.c                             :+:      :+:    :+:   */
+/*   ft_strbuilder_last.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 16:14:51 by scambier          #+#    #+#             */
-/*   Updated: 2024/12/05 16:32:39 by scambier         ###   ########.fr       */
+/*   Created: 2024/12/05 16:31:57 by scambier          #+#    #+#             */
+/*   Updated: 2024/12/05 16:32:07 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strbuilder_addraw(t_strbuilder *buffer, char *str, int len)
+t_strbuilder	*ft_strbuilder_last(t_strbuilder *buffer)
 {
-	ft_memcpy(buffer->content + buffer->index, str, len);
-	buffer->index += len;
-	return (1);
+	if (!buffer)
+		return (0);
+	if (buffer->next)
+		return (ft_strbuilder_last(buffer->next));
+	return (buffer);
 }
