@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2024/12/05 16:33:21 by scambier         ###   ########.fr        #
+#    Updated: 2025/10/26 18:15:07 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,15 +106,15 @@ SRC = \
 	bit/ft_bit_get.c\
 	bit/ft_bit_set.c\
 	bit/ft_bit_invert.c\
-	strbuilder/ft_strbuilder_new.c\
-	strbuilder/ft_strbuilder_free.c\
-	strbuilder/ft_strbuilder_addraw.c\
-	strbuilder/ft_strbuilder_addchar.c\
-	strbuilder/ft_strbuilder_addstr.c\
-	strbuilder/ft_strbuilder_len.c\
-	strbuilder/ft_strbuilder_build.c\
-	strbuilder/ft_strbuilder_last.c\
-	strbuilder/ft_strbuilder_setchars.c\
+	strb/ft_strb_new.c\
+	strb/ft_strb_free.c\
+	strb/ft_strb_addraw.c\
+	strb/ft_strb_addchar.c\
+	strb/ft_strb_addstr.c\
+	strb/ft_strb_len.c\
+	strb/ft_strb_build.c\
+	strb/ft_strb_last.c\
+	strb/ft_strb_setchars.c\
 
 OBJ_DIR = obj
 CFLAGS = -Wall -Werror -Wextra -g3

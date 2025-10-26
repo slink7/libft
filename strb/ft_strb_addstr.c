@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strbuilder_addstr.c                             :+:      :+:    :+:   */
+/*   ft_strb_addstr.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_strbuilder_addstr(t_strbuilder *buffer, char *str, int len)
+int	ft_strb_addstr(t_strb *buffer, char *str, int len)
 {
 	int	to_cpy;
 	int	overflow;
@@ -20,19 +20,19 @@ int	ft_strbuilder_addstr(t_strbuilder *buffer, char *str, int len)
 	if (!str || len < 0 || !*str)
 		return (0);
 	if (buffer->next)
-		return (ft_strbuilder_addstr(ft_strbuilder_last(buffer), str, len));
+		return (ft_strb_addstr(ft_strb_last(buffer), str, len));
 	if (len > 0)
 	{
 		to_cpy = STRBUILDER_SIZE - buffer->index;
 		overflow = len - to_cpy;
 		if (overflow > 0)
 		{
-			ft_strbuilder_addraw(buffer, str, to_cpy);
+			ft_strb_addraw(buffer, str, to_cpy);
 			if (!buffer->next)
-				buffer->next = ft_strbuilder_new();
-			return (ft_strbuilder_addstr(buffer->next, str + to_cpy, overflow));
+				buffer->next = ft_strb_new();
+			return (ft_strb_addstr(buffer->next, str + to_cpy, overflow));
 		}
-		ft_strbuilder_addraw(buffer, str, len);
+		ft_strb_addraw(buffer, str, len);
 	}
 	return (1);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strbuilder_free.c                               :+:      :+:    :+:   */
+/*   ft_strb_free.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,11 +14,11 @@
 
 #include "libft.h"
 
-int	ft_strbuilder_free(t_strbuilder **buffer)
+int	ft_strb_free(t_strb **buffer)
 {
 	if (!buffer || !*buffer)
 		return (0);
-	ft_strbuilder_free(&(*buffer)->next);
+	ft_strb_free(&(*buffer)->next);
 	free(*buffer);
 	*buffer = 0;
 	return (1);

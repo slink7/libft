@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strbuilder_len.c                                :+:      :+:    :+:   */
+/*   ft_strb_len.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int	ft_strbuilder_len(t_strbuilder *buffer)
+int	ft_strb_len(t_strb *buffer)
 {
 	if (!buffer)
 		return (0);
-	return (buffer->index + ft_strbuilder_len(buffer->next));
+	return (buffer->index + ft_strb_len(buffer->next));
 }

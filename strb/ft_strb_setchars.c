@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strbuilder_setchars.c                           :+:      :+:    :+:   */
+/*   ft_strb_setchars.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_strbuilder_setchars(t_strbuilder *buffer, char c, int len)
+int	ft_strb_setchars(t_strb *buffer, char c, int len)
 {
 	int	to_cpy;
 	int	overflow;
@@ -20,7 +20,7 @@ int	ft_strbuilder_setchars(t_strbuilder *buffer, char c, int len)
 	if (!c || len < 0)
 		return (0);
 	if (buffer->next)
-		return (ft_strbuilder_setchars(ft_strbuilder_last(buffer), c, len));
+		return (ft_strb_setchars(ft_strb_last(buffer), c, len));
 	if (len > 0)
 	{
 		to_cpy = STRBUILDER_SIZE - buffer->index;
@@ -30,8 +30,8 @@ int	ft_strbuilder_setchars(t_strbuilder *buffer, char c, int len)
 			ft_memset(buffer->content + buffer->index, c, to_cpy);
 			buffer->index += to_cpy;
 			if (!buffer->next)
-				buffer->next = ft_strbuilder_new();
-			return (ft_strbuilder_setchars(buffer->next, c, overflow));
+				buffer->next = ft_strb_new();
+			return (ft_strb_setchars(buffer->next, c, overflow));
 		}
 		ft_memset(buffer->content + buffer->index, c, len);
 		buffer->index += len;

@@ -43,28 +43,28 @@ static char	*handle_format(char *f, va_list ap)
 
 char	*ft_vsprintf(char *format, va_list ap)
 {
-	t_strbuilder	*builder;
+	t_strb	*builder;
 	char			*index;
 	char			*out;
 
 	if (!format)
 		return (0);
-	builder = ft_strbuilder_new();
+	builder = ft_strb_new();
 	index = ft_strchr(format, '%');
 	while (index)
 	{
-		ft_strbuilder_addstr(builder, format, index - format);
+		ft_strb_addstr(builder, format, index - format);
 		out = handle_format(index + 1, ap);
-		if (out && (ft_strbuilder_addstr(builder, out, ft_strlen(out)) || 1))
+		if (out && (ft_strb_addstr(builder, out, ft_strlen(out)) || 1))
 			free(out);
 		else
-			ft_strbuilder_addstr(builder, "(null)", 6);
+			ft_strb_addstr(builder, "(null)", 6);
 		format = index + 2;
 		index = ft_strchr(format, '%');
 	}
-	ft_strbuilder_addstr(builder, format, ft_strlen(format));
-	out = ft_strbuilder_build(builder);
-	ft_strbuilder_free(&builder);
+	ft_strb_addstr(builder, format, ft_strlen(format));
+	out = ft_strb_build(builder);
+	ft_strb_free(&builder);
 	return (out);
 }
 

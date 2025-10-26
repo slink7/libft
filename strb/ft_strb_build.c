@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strbuilder_addchar.c                            :+:      :+:    :+:   */
+/*   ft_strb_build.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 18:46:48 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/09 19:01:11 by scambier         ###   ########.fr       */
+/*   Created: 2024/03/09 18:42:42 by scambier          #+#    #+#             */
+/*   Updated: 2024/12/02 17:41:47 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "libft.h"
 
-void	ft_strbuilder_addchar(t_strbuilder *buffer, char c)
+char	*ft_strb_build(t_strb *buffer)
 {
-	if (!buffer)
-		return ;
-	if (buffer->next)
+	t_strb	*index;
+	int				len;
+	char			*out;
+	int				out_k;
+
+	len = ft_strb_len(buffer);
+	out = malloc(len + 1);
+	if (!out)
+		return (0);
+	index = buffer;
+	out_k = 0;
+	while (index)
 	{
-		ft_strbuilder_addchar(buffer->next, c);
-		return ;
+		ft_strlcpy(out + out_k, index->content, index->index + 1);
+		out_k += index->index;
+		index = index->next;
 	}
-	if (buffer->index >= STRBUILDER_SIZE)
-	{
-		buffer->next = ft_strbuilder_new();
-		ft_strbuilder_addchar(buffer->next, c);
-		return ;
-	}
-	buffer->content[buffer->index++] = c;
+	return (out);
 }
