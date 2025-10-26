@@ -5,22 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 19:59:36 by scambier          #+#    #+#             */
-/*   Updated: 2024/04/07 00:58:56 by scambier         ###   ########.fr       */
+/*   Created: 2023/11/23 16:50:39 by scambier          #+#    #+#             */
+/*   Updated: 2025/10/26 17:02:25 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
-#include <unistd.h>
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_vprintf(char *format, va_list ap)
+int	ft_vprintf(const char *format, va_list ap)
 {
-	return (ft_vfprintf(STDOUT_FILENO, format, ap));
+	return (ft_vdprintf(1, format, ap));
 }
 
-int	ft_printf(char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		out;

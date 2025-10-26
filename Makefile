@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2025/10/26 18:15:07 by scambier         ###   ########.fr        #
+#    Updated: 2025/10/26 23:52:57 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,10 +86,6 @@ SRC = \
 	math/ft_fmax.c\
 	math/ft_fabs.c\
 	math/ft_fclamp.c\
-	printf/putters0.c\
-	printf/ft_sprintf.c\
-	printf/ft_fprintf.c\
-	printf/ft_printf.c\
 	bst/ft_bst_fetch.c\
 	bst/ft_bst_getvar.c\
 	bst/ft_bst_print.c\
@@ -115,6 +111,14 @@ SRC = \
 	strb/ft_strb_build.c\
 	strb/ft_strb_last.c\
 	strb/ft_strb_setchars.c\
+	printf/ft_dprintf.c\
+	printf/conversion_specification.c\
+	printf/add_char.c\
+	printf/add_str.c\
+	printf/ft_sprintf.c\
+	printf/add_numbers.c\
+	printf/ft_printf.c\
+
 
 OBJ_DIR = obj
 CFLAGS = -Wall -Werror -Wextra -g3

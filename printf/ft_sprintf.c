@@ -5,76 +5,80 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 02:24:33 by scambier          #+#    #+#             */
-/*   Updated: 2024/05/08 19:41:57 by scambier         ###   ########.fr       */
+/*   Created: 2024/12/02 08:56:32 by scambier          #+#    #+#             */
+/*   Updated: 2025/10/27 00:08:07 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 #include "libft.h"
+#include "conversion_specification.h"
 
-static char	*char_to_str(char c)
+void	add_char(t_strb *buffer, t_conv_spec *spec, char c);
+void	add_str(t_strb *buffer, t_conv_spec *spec, char *str);
+void	add_unsigned(t_strb *buffer, t_conv_spec *spec, unsigned int value, unsigned int bi);
+void	add_int(t_strb *buffer, t_conv_spec *spec, int value);
+void	add_pointer(t_strb *buffer, t_conv_spec *spec, unsigned long value);
+
+static void	handle_specification(t_strb *buffer, t_conv_spec *spec, va_list ap)
 {
-	char	*out;
-
-	out = ft_calloc(2, sizeof(char));
-	out[0] = c;
-	return (out);
-}
-
-static char	*handle_format(char *f, va_list ap)
-{
-	if (*f == 's')
-		return (ft_strdup(va_arg(ap, char *)));
-	else if (*f == 'd')
-		return (ft_itoa(va_arg(ap, int)));
-	else if (*f == 'x')
-		return (ft_itoa_base(va_arg(ap, unsigned int), "0123456789abcdef"));
-	else if (*f == 'X')
-		return (ft_itoa_base(va_arg(ap, unsigned int), "0123456789ABCDEF"));
-	else if (*f == 'u')
-		return (ft_itoa_base(va_arg(ap, unsigned int), "0123456789"));
-	else if (*f == 'c')
-		return (char_to_str(va_arg(ap, int)));
-	return (ft_substr(f - 1, 0, 2));
-}
-
-char	*ft_vsprintf(char *format, va_list ap)
-{
-	t_strb	*builder;
-	char			*index;
-	char			*out;
-
-	if (!format)
-		return (0);
-	builder = ft_strb_new();
-	index = ft_strchr(format, '%');
-	while (index)
-	{
-		ft_strb_addstr(builder, format, index - format);
-		out = handle_format(index + 1, ap);
-		if (out && (ft_strb_addstr(builder, out, ft_strlen(out)) || 1))
-			free(out);
-		else
-			ft_strb_addstr(builder, "(null)", 6);
-		format = index + 2;
-		index = ft_strchr(format, '%');
+	if (spec->specifier == 's')
+		add_str(buffer, spec, va_arg(ap, char *));
+	else if (spec->specifier == 'd' || spec->specifier == 'i')
+		add_int(buffer, spec, va_arg(ap, int));
+	else if (spec->specifier == 'c')
+		add_char(buffer, spec, (char) va_arg(ap, int));
+	else if (spec->specifier == 'u')
+		add_unsigned(buffer, spec, va_arg(ap, unsigned int), 0);
+	else if (spec->specifier == 'x')
+		add_unsigned(buffer, spec, va_arg(ap, unsigned int), 1);
+	else if (spec->specifier == 'X')
+		add_unsigned(buffer, spec, va_arg(ap, unsigned int), 2);
+	else if (spec->specifier == 'p')
+		add_pointer(buffer, spec, va_arg(ap, unsigned long));
+	else if (spec->specifier == '%')
+		ft_strb_addchar(buffer, '%');
+	else {
+		ft_strb_addchar(buffer, '%');
+		spec->length = 1;
 	}
-	ft_strb_addstr(builder, format, ft_strlen(format));
-	out = ft_strb_build(builder);
-	ft_strb_free(&builder);
-	return (out);
 }
 
-char	*ft_sprintf(char *format, ...)
+int	ft_vsprintf(char **out, const char	*format, va_list ap)
+{
+	t_conv_spec		spec;
+	t_strb	*buffer;
+	char			*next_spec;
+	unsigned int	out_len;
+
+	buffer = ft_strb_new();
+	if (!buffer)
+		return (0);
+	next_spec = ft_strchr(format, '%');
+	while (next_spec)
+	{
+		ft_strb_addstr(buffer, (char *)format, (int)(next_spec - format));
+		read_conversion_specification(&spec, next_spec, ap);
+		handle_specification(buffer, &spec, ap);
+		format = next_spec + spec.length;
+		next_spec = ft_strchr(format, '%');
+	}
+	ft_strb_addstr(buffer, (char *)format, ft_strlen(format));
+	*out = ft_strb_build(buffer);
+	out_len = ft_strb_len(buffer);
+	ft_strb_free(&buffer);
+	return (out_len);
+}
+
+int	ft_sprintf(char **out, const char *format, ...)
 {
 	va_list	ap;
-	char	*out;
+	size_t	out_len;
 
 	va_start(ap, format);
-	out = ft_vsprintf(format, ap);
+	out_len = ft_vsprintf(out, format, ap);
 	va_end(ap);
-	return (out);
+	return (out_len);
 }
