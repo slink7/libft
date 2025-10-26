@@ -29,7 +29,7 @@ char	*ft_strb_build(t_strb *buffer)
 	out_k = 0;
 	while (index)
 	{
-		ft_strlcpy(out + out_k, index->content, index->index + 1);
+		ft_memcpy(out + out_k, index->content, index->index + 1);
 		out_k += index->index;
 		index = index->next;
 	}
