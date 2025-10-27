@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 17:40:28 by scambier          #+#    #+#             */
-/*   Updated: 2025/10/27 01:06:51 by scambier         ###   ########.fr       */
+/*   Updated: 2025/10/27 01:25:18 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ typedef struct s_conv_spec {
 
 typedef t_conv_spec	t_cs;
 
-int		read_conversion_specification(t_conv_spec *out, const char *str, va_list va);
+int		read_conversion_specification(t_cs *out, const char *str, va_list va);
 
 #endif
