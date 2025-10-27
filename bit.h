@@ -6,12 +6,17 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 03:22:12 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/06 03:30:21 by scambier         ###   ########.fr       */
+/*   Updated: 2025/10/27 00:15:59 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BIT_H
 # define BIT_H
+
+typedef unsigned char	t_uint8;
+typedef unsigned short	t_uint16;
+typedef unsigned int	t_uint32;
+typedef unsigned long	t_uint64;
 
 unsigned int	ft_bit_get(int	*src, int b);
 void			ft_bit_set(int *src, int b, int v);

@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2025/10/26 23:52:57 by scambier         ###   ########.fr        #
+#    Updated: 2025/10/27 01:13:40 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,6 +111,7 @@ SRC = \
 	strb/ft_strb_build.c\
 	strb/ft_strb_last.c\
 	strb/ft_strb_setchars.c\
+	printf/ft_nbrlen.c\
 	printf/ft_dprintf.c\
 	printf/conversion_specification.c\
 	printf/add_char.c\
@@ -152,4 +153,8 @@ test : all
 	cc main.c -g3 -c
 	cc main.o -L. -lft
 
-.PHONY : re fclean clean all default
+printf:
+	make test
+	./a.out | grep -a "DIFF" -B 5
+
+.PHONY : re fclean clean all default printf

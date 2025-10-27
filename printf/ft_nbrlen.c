@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strb_build.c                              :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 18:42:42 by scambier          #+#    #+#             */
-/*   Updated: 2024/12/02 17:41:47 by scambier         ###   ########.fr       */
+/*   Created: 2025/10/27 01:12:47 by scambier          #+#    #+#             */
+/*   Updated: 2025/10/27 01:14:09 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
 #include "libft.h"
 
-char	*ft_strb_build(t_strb *buffer)
+int	ft_nbrlen(t_uint64 n, t_uint32 base)
 {
-	t_strb	*index;
-	int		len;
-	char	*out;
-	int		out_k;
+	int	out;
 
-	len = ft_strb_len(buffer);
-	out = malloc(len + 1);
-	if (!out)
-		return (0);
-	index = buffer;
-	out_k = 0;
-	while (index)
+	if (!n)
+		return (1);
+	out = 0;
+	while (n)
 	{
-		ft_memcpy(out + out_k, index->content, index->index + 1);
-		out_k += index->index;
-		index = index->next;
+		n /= base;
+		out++;
 	}
 	return (out);
 }
