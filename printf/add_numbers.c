@@ -6,20 +6,15 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 19:18:26 by scambier          #+#    #+#             */
-/*   Updated: 2025/10/27 01:13:57 by scambier         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:09:26 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "conversion_specification.h"
+#include "t_base.h"
 
 int	ft_nbrlen(t_uint64 n, t_uint32 base);
-
-typedef struct s_base {
-	char			*digits;
-	t_uint32		size;
-	char			*prefix;
-}	t_base;
 
 void	add_int_base_rec(t_strb *buffer, t_uint64 value, t_base *base)
 {

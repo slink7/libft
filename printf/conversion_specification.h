@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 17:40:28 by scambier          #+#    #+#             */
-/*   Updated: 2025/10/27 01:25:18 by scambier         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:11:06 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 # define SPACE		0b01000
 # define SIGNED		0b10000
 
-typedef struct s_conv_spec {
+typedef struct s_conv_spec
+{
 	char	flags;
 	int		field_width;
 	int		precision;
