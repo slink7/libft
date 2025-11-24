@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:49:41 by scambier          #+#    #+#             */
-/*   Updated: 2024/05/10 18:54:19 by scambier         ###   ########.fr       */
+/*   Updated: 2025/11/24 10:47:31 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_pmem(void *ptr, int len);
 void	*ft_memdup(void *src, size_t size);
 void	ft_memcat(void **dst, int dst_len, void *src, int src_len);
+int		ft_free(void **ptr, void *new);
 
 #endif
