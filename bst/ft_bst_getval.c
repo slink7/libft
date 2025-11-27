@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:40:09 by scambier          #+#    #+#             */
-/*   Updated: 2025/11/27 04:17:30 by scambier         ###   ########.fr       */
+/*   Updated: 2025/11/27 04:59:27 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 char	*ft_bst_getval(t_bst *bst, char *name)
 {
-	return (ft_bst_fetch(&bst, name)->value);
+	t_bst	*temp;
+
+	temp = ft_bst_find(bst, name);
+	if (!temp)
+		return (0);
+	return (temp->value);
 }
