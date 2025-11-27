@@ -43,5 +43,6 @@ int		ft_strchri(char *str, char c);
 int		ft_atoi_base(char *str, char *base);
 void	ft_strcat(char **dst, char *src);
 int		ft_strrep(char *str, char from, char to);
+int		ft_str_iswhitespace(char *str);
 
 #endif
