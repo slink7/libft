@@ -17,6 +17,6 @@ void	ft_bst_print(t_bst *bst)
 	if (!bst)
 		return ;
 	ft_bst_print(bst->left);
-	ft_printf("\'%s\'=\'%s\'\n", bst->var->name, bst->var->value);
+	ft_printf("\'%s\'=\'%s\'\n", bst->name, bst->value);
 	ft_bst_print(bst->right);
 }

@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:46:39 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/19 19:14:17 by scambier         ###   ########.fr       */
+/*   Updated: 2025/11/27 04:01:09 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,37 @@
 
 #include "libft.h"
 
-static void	remove(t_bst **bst)
+static void	remove(t_bst **bst, t_bst *new)
 {
-	ft_var_free(&(*bst)->var);
-	free(*bst);
-	*bst = 0;
+	ft_free((void **)&(*bst)->name, 0);
+	ft_free((void **)&(*bst)->value, 0);
+	ft_free((void **)bst, new);
 }
 
-t_bst	*ft_bst_remove(t_bst **bst, char *name)
+int	ft_bst_remove(t_bst **bst, char *name)
 {
-	t_bst	**target;
 	t_bst	*temp;
+	int		cmp;
 
-	target = ft_bst_find(bst, name);
-	if (!target)
-		return (0);
-	if (!(*target)->left)
+	if (!bst || !*bst)
+		return (1);
+	cmp = ft_strncmp(name, (*bst)->name, ft_strlen(name) + 1);
+	if (cmp < 0)
+		return (ft_bst_remove(&(*bst)->left, name));
+	else if (cmp > 0)
+		return (ft_bst_remove(&(*bst)->right, name));
+	if (!(*bst)->left)
+		remove(bst, (*bst)->right);
+	else if (!(*bst)->right)
+		remove(bst, (*bst)->left);
+	else
 	{
-		temp = (*target)->right;
-		remove(target);
-		return (temp);
+		temp = ft_bst_find_min((*bst)->right);
+		ft_free((void **)&(*bst)->name, ft_strdup(temp->name));
+		ft_free((void **)&(*bst)->value, ft_strdup(temp->value));
+		if (!(*bst)->name || !(*bst)->value)
+			return (0);
+		return (ft_bst_remove(&(*bst)->right, temp->name));
 	}
-	else if (!(*target)->right)
-	{
-		temp = (*target)->right;
-		remove(target);
-		return (temp);
-	}
-	temp = ft_bst_find_min(*bst);
-	(*target)->var = temp->var;
-	(*target)->right = ft_bst_remove(&(*target)->right, temp->var->name);
-	return (*target);
+	return (1);
 }

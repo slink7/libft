@@ -12,9 +12,20 @@
 
 #include "libft.h"
 
-int	ft_bst_size(t_bst *bst)
+static void	ft_bst_size_rec(t_bst *bst, int *out)
 {
 	if (!bst)
-		return (0);
-	return (ft_bst_size(bst->left) + ft_bst_size(bst->right) + 1);
+		return ;
+	(*out)++;
+	ft_bst_size_rec(bst->left, out);
+	ft_bst_size_rec(bst->right, out);
+}
+
+int	ft_bst_size(t_bst *bst)
+{
+	int	out;
+
+	out = 0;
+	ft_bst_size_rec(bst, &out);
+	return (out);
 }

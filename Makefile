@@ -91,13 +91,11 @@ SRC = \
 	math/ft_fabs.c\
 	math/ft_fclamp.c\
 	bst/ft_bst_fetch.c\
-	bst/ft_bst_getvar.c\
+	bst/ft_bst_getval.c\
 	bst/ft_bst_print.c\
-	bst/ft_var_free.c\
 	bst/ft_bst_free.c\
 	bst/ft_bst_new.c\
-	bst/ft_bst_setvar.c\
-	bst/ft_var_new.c\
+	bst/ft_bst_setval.c\
 	bst/ft_bst_size.c\
 	bst/ft_bst_export.c\
 	bst/ft_bst_find_min.c\

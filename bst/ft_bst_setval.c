@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_var_new.c                                       :+:      :+:    :+:   */
+/*   ft_bst_setvar.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 02:33:36 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/06 03:05:01 by scambier         ###   ########.fr       */
+/*   Created: 2024/03/06 02:41:03 by scambier          #+#    #+#             */
+/*   Updated: 2024/03/19 18:38:31 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 #include "libft.h"
 
-t_var	*ft_var_new(char *name)
+int	ft_bst_setval(t_bst **bst, char *name, char *value)
 {
-	t_var	*out;
+	t_bst	*target;
 
-	out = malloc(sizeof(t_var));
-	out->name = name;
-	out->value = 0;
-	return (out);
+	target = ft_bst_fetch(bst, name);
+	if (!target)
+		return (0);
+	ft_free((void **)&target->value, ft_strdup(value));
+	return (!!target->value);
 }

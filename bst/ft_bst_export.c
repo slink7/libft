@@ -19,7 +19,7 @@ static void	ft_bst_export_rec(t_bst *bst, char **out, int *i)
 		return ;
 	ft_bst_export_rec(bst->left, out, i);
 	out[(*i)++] = ft_strsjoin((char *[]){
-			bst->var->name, "=", bst->var->value, 0
+			bst->name, "=", bst->value, 0
 		}, "");
 	ft_bst_export_rec(bst->right, out, i);
 }

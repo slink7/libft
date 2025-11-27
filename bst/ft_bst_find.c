@@ -18,7 +18,7 @@ t_bst	**ft_bst_find(t_bst **bst, char *name)
 
 	if (!bst || !*bst)
 		return (0);
-	cmp = ft_strncmp(name, (*bst)->var->name, ft_strlen(name) + 1);
+	cmp = ft_strncmp(name, (*bst)->name, ft_strlen(name) + 1);
 	if (cmp == 0)
 		return (bst);
 	else if (cmp < 0)

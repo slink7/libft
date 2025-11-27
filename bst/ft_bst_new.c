@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:34:17 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/06 03:04:18 by scambier         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:41:33 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 #include "libft.h"
 
-t_bst	*ft_bst_new(t_var	*var)
+t_bst	*ft_bst_new(char *name, char *value)
 {
 	t_bst	*out;
 
-	out = malloc(sizeof(t_bst));
-	out->var = var;
-	out->left = 0;
-	out->right = 0;
+	out = ft_calloc(sizeof(t_bst), 1);
+	if (!out)
+		return (NULL);
+	out->name = name;
+	out->value = value;
 	return (out);
 }

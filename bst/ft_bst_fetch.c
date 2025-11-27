@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:39:26 by scambier          #+#    #+#             */
-/*   Updated: 2024/03/19 18:36:27 by scambier         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:41:30 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,20 @@
 
 t_bst	*ft_bst_fetch(t_bst **bst, char *name)
 {
-	int	cmp;
+	int		cmp;
+	char	*tmp_name;
 
 	if (!*bst)
-		*bst = ft_bst_new(ft_var_new(ft_strdup(name)));
-	cmp = ft_strncmp(name, (*bst)->var->name, ft_strlen(name) + 1);
+	{
+		tmp_name = ft_strdup(name);
+		if (!tmp_name)
+			return (NULL);
+		*bst = ft_bst_new(tmp_name, 0);
+		if (!(*bst))
+			return (ft_free((void **)&tmp_name, 0), NULL);
+		return (*bst);
+	}
+	cmp = ft_strncmp(name, (*bst)->name, ft_strlen(name) + 1);
 	if (cmp == 0)
 		return (*bst);
 	else if (cmp < 0)
