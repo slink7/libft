@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.h                                             :+:      :+:    :+:   */
+/*   ft_str_iswhitespace.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 16:44:15 by scambier          #+#    #+#             */
-/*   Updated: 2025/11/24 16:11:30 by scambier         ###   ########.fr       */
+/*   Created: 2025/11/24 16:08:11 by scambier          #+#    #+#             */
+/*   Updated: 2025/11/24 16:09:22 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHAR_H
-# define CHAR_H
+#include "str.h"
+#include "char.h"
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
-int		ft_isupper(int c);
-int		ft_iswhitespace(int c);
-
-#endif
+int	ft_str_iswhitespace(char *str)
+{
+	return (!ft_strchrf(str, ft_iswhitespace, 1));
+}

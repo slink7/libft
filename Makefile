@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2025/11/24 10:44:25 by scambier         ###   ########.fr        #
+#    Updated: 2025/11/24 16:12:55 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SRC = \
 	char/ft_isprint.c\
 	char/ft_toupper.c\
 	char/ft_tolower.c\
+	char/ft_isupper.c\
+	char/ft_iswhitespace.c\
 	mem/ft_memset.c\
 	mem/ft_bzero.c\
 	mem/ft_memcpy.c\
@@ -61,6 +63,7 @@ SRC = \
 	str/ft_atoi_base.c\
 	str/ft_strcat.c\
 	str/ft_strrep.c\
+	str/ft_str_iswhitespace.c\
 	lst/ft_lstnew.c\
 	lst/ft_lstadd_front.c\
 	lst/ft_lstsize.c\
