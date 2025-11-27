@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:31:40 by scambier          #+#    #+#             */
-/*   Updated: 2025/11/24 16:41:40 by scambier         ###   ########.fr       */
+/*   Updated: 2025/11/27 04:51:39 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int		ft_bst_size(t_bst *bst);
 char	**ft_bst_export(t_bst *bst);
 t_bst	*ft_bst_find_min(t_bst *bst);
 int		ft_bst_remove(t_bst **bst, char *name);
-t_bst	**ft_bst_find(t_bst **bst, char *name);
+t_bst	*ft_bst_find(t_bst *bst, char *name);
 
 #endif
