@@ -6,11 +6,13 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2025/11/24 16:12:55 by scambier         ###   ########.fr        #
+#    Updated: 2025/11/27 05:02:52 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #=== CONFIG ===
+
+CC = cc
 
 NAME = libft.a
 
@@ -138,7 +140,7 @@ all : $(NAME)
 
 $(OBJ_DIR)/%.o : %.c
 	@mkdir -p $(dir $@)
-	cc $(CFLAGS) -o $@ -c $< -I.
+	$(CC) $(CFLAGS) -o $@ -c $< -I.
 
 $(NAME) : $(OBJ)
 	ar rc $(NAME) $(OBJ)
@@ -152,8 +154,8 @@ fclean : clean
 re : fclean all
 
 test : all
-	cc main.c -g3 -c
-	cc main.o -L. -lft
+	$(CC) main.c -g3 -c
+	$(CC) main.o -L. -lft
 
 printf:
 	make test
