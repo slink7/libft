@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2025/11/27 05:02:52 by scambier         ###   ########.fr        #
+#    Updated: 2025/11/28 04:41:02 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,6 +103,9 @@ SRC = \
 	bst/ft_bst_find_min.c\
 	bst/ft_bst_remove.c\
 	bst/ft_bst_find.c\
+	bst/ft_bst_toarray.c\
+	bst/ft_bst_balance.c\
+	bst/ft_bst_depth.c\
 	bit/ft_bit_get.c\
 	bit/ft_bit_set.c\
 	bit/ft_bit_invert.c\
