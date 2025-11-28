@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 03:58:19 by scambier          #+#    #+#             */
-/*   Updated: 2025/11/28 04:41:22 by scambier         ###   ########.fr       */
+/*   Updated: 2025/11/28 04:58:32 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_bst_depth(t_bst *bst)
 {
-	int left_depth;
-	int right_depth;
+	int	left_depth;
+	int	right_depth;
 
 	if (!bst)
 		return (0);

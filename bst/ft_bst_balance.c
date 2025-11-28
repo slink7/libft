@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 02:58:30 by scambier          #+#    #+#             */
-/*   Updated: 2025/11/28 04:45:01 by scambier         ###   ########.fr       */
+/*   Updated: 2025/11/28 04:57:58 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,10 @@ void	ft_bst_balance(t_bst **bst)
 	int		size;
 
 	size = ft_bst_toarray(*bst, &temp[0], &temp[1]);
-	
 	out = 0;
 	ft_bst_balance_rec(&out, temp, 0, size - 1);
-
 	ft_strarrfree(temp[0]);
 	ft_strarrfree(temp[1]);
-
 	ft_bst_free(bst);
 	*bst = out;
 }
