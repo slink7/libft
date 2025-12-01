@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2025/11/28 04:41:02 by scambier         ###   ########.fr        #
+#    Updated: 2025/12/01 00:59:52 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,6 +126,10 @@ SRC = \
 	printf/ft_sprintf.c\
 	printf/add_numbers.c\
 	printf/ft_printf.c\
+	color/ft_print_color.c\
+	color/ft_atohc.c\
+	color/ft_atodc.c\
+	color/ft_atoc.c
 
 
 OBJ_DIR = obj

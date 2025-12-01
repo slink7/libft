@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_atoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:27:27 by scambier          #+#    #+#             */
-/*   Updated: 2025/11/30 23:19:18 by scambier         ###   ########.fr       */
+/*   Created: 2025/12/01 00:55:05 by scambier          #+#    #+#             */
+/*   Updated: 2025/12/01 01:00:14 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "color.h"
 
-# include "mem.h"
-# include "char.h"
-# include "str.h"
-# include "stream.h"
-# include "lst.h"
-# include "ftmath.h"
-# include "ft_printf.h"
-# include "bst.h"
-# include "bit.h"
-# include "strb.h"
-# include "color.h"
-
-#endif
+int	ft_atoc(t_color *out, char *str)
+{
+	if (ft_atohc(out, str))
+		return (1);
+	if (ft_atodc(out, str))
+		return (1);
+	return (0);
+}
