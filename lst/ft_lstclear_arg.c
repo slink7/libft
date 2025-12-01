@@ -13,12 +13,13 @@
 #include <stdlib.h>
 
 #include "lst.h"
+#include "mem.h"
 
 void	ft_lstclear_arg(t_list **lst, void (*del)(void*, void*), void *args)
 {
 	if (!lst || !*lst)
 		return ;
 	ft_lstclear_arg(&(*lst)->next, del, args);
-	del(lst->content, args);
+	del((*lst)->content, args);
 	ft_free((void **)lst, 0);
 }
