@@ -6,13 +6,13 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 04:47:12 by scambier          #+#    #+#             */
-/*   Updated: 2025/12/02 04:50:02 by scambier         ###   ########.fr       */
+/*   Updated: 2025/12/02 04:59:37 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rand.h"
 
-t_color	ft_random_color()
+t_color	ft_random_color(void)
 {
 	return ((t_color){.raw = ft_lehmer()});
 }

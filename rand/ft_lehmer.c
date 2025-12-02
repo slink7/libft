@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 03:34:15 by scambier          #+#    #+#             */
-/*   Updated: 2025/12/02 03:58:16 by scambier         ###   ########.fr       */
+/*   Updated: 2025/12/02 04:59:25 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #define MGK_B 0x4a39b70d
 #define MGK_C 0x12fad5c9
 
-unsigned int	ft_lehmer()
+unsigned int	ft_lehmer(void)
 {
 	unsigned int	*seed;
 	unsigned long	tmp;
