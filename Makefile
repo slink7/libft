@@ -76,6 +76,7 @@ SRC = \
 	lst/ft_lstiter.c\
 	lst/ft_lstmap.c\
 	lst/ft_lstexport.c\
+	lst/ft_lstclear_arg.c\
 	stream/get_next_line.c\
 	stream/ft_putnbr_fd.c\
 	stream/ft_putstr_fd.c\

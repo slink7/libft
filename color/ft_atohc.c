@@ -6,7 +6,7 @@
 /*   By: scambier <scambier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 22:37:12 by scambier          #+#    #+#             */
-/*   Updated: 2025/12/01 00:54:41 by scambier         ###   ########.fr       */
+/*   Updated: 2025/12/01 01:33:38 by scambier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ int	ft_atohc(t_color *out, char *str)
 	};
 	unsigned int	k;
 
-	out->raw = 0x0;
 	k = -1u;
 	while (++k < sizeof(prefixes) / sizeof(char *))
 		if (try_n_get_number(out, prefixes[k], str))
