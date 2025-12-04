@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2025/12/02 04:50:26 by scambier         ###   ########.fr        #
+#    Updated: 2025/12/04 01:31:55 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ SRC = \
 	str/ft_strcat.c\
 	str/ft_strrep.c\
 	str/ft_str_iswhitespace.c\
+	str/ft_strcount.c\
 	lst/ft_lstnew.c\
 	lst/ft_lstadd_front.c\
 	lst/ft_lstsize.c\
