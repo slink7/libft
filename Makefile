@@ -6,7 +6,7 @@
 #    By: scambier <scambier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 17:06:10 by scambier          #+#    #+#              #
-#    Updated: 2025/12/04 01:31:55 by scambier         ###   ########.fr        #
+#    Updated: 2025/12/07 18:57:51 by scambier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,12 @@ SRC = \
 	math/ft_fmax.c\
 	math/ft_fabs.c\
 	math/ft_fclamp.c\
+	math/vector/ft_dot2f.c\
+	math/vector/ft_rotate2f.c\
+	math/vector/ft_addvec2f.c\
+	math/vector/ft_subvec2f.c\
+	math/vector/ft_mulvec2f.c\
+	math/vector/ft_divvec2f.c\
 	bst/ft_bst_fetch.c\
 	bst/ft_bst_getval.c\
 	bst/ft_bst_print.c\
@@ -167,7 +173,7 @@ re : fclean all
 
 test : all
 	$(CC) main.c -g3 -c
-	$(CC) main.o -L. -lft
+	$(CC) main.o -lm -L. -lft
 
 printf:
 	make test
