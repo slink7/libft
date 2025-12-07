@@ -12,7 +12,7 @@
 
 #include "ftmath.h"
 
-void	ft_mulvec2f(t_vect2f *out, t_vec2f *vec, float scalar)
+void	ft_mulvec2f(t_vec2f *out, t_vec2f *vec, float scalar)
 {
 	out->x = vec->x * scalar;
 	out->y = vec->y * scalar;

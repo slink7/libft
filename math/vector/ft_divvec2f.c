@@ -12,7 +12,7 @@
 
 #include "ftmath.h"
 
-void	ft_divvec2f(t_vec2f *out, t_vec2f *a, float	scalar)
+void	ft_divvec2f(t_vec2f *out, t_vec2f *a, float scalar)
 {
 	out->x = a->x / scalar;
 	out->y = a->y / scalar;

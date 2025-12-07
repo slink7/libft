@@ -14,11 +14,11 @@
 
 #include "ftmath.h"
 
-void	ft_rotate2f(t_vec2f *vec, float	θ)
+void	ft_rotate2f(t_vec2f *vec, float theta)
 {
 	t_vec2f	tmp_vec;
 
 	tmp_vec = *vec;
-	vec->x = tmp_vec.x * cos(θ) - tmp_vec.y * sin(θ);
-	vec->y = tmp_vec.x * sin(θ) + tmp_vec.y * cos(θ);
+	vec->x = tmp_vec.x * cos(theta) - tmp_vec.y * sin(theta);
+	vec->y = tmp_vec.x * sin(theta) + tmp_vec.y * cos(theta);
 }
